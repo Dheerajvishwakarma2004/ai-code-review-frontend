@@ -1,0 +1,82 @@
+.code-editor-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.editor-container {
+    margin-bottom: 20px;
+}
+
+.fetch-button {
+    margin: 10px auto; /* Centers the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #61dafb;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    text-align: center;
+}
+
+.fetch-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.ai-feedback {
+    background-color: #61dafb;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* CSS for a simple spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #61dafb;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.suggestion-card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.ai-feedback {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.suggestion-card strong {
+    color: #000203; /* Highlight bold text */
+}
