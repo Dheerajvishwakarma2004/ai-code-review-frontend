@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# AI Code Reviewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An AI-powered tool for reviewing JavaScript code and providing suggestions using Hugging Face models.  
+Frontend is deployed on **Vercel**, and backend is deployed on **Render**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- Code editor with Monaco Editor
+- AI-based suggestions and improvements
+- Clean UI with syntax highlighting
+- Easy deployment on Vercel (Frontend) and Render (Backend)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/ai-code-reviewer.git
+cd ai-code-reviewer
+```
 
-### `npm test`
+### 2. Install Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Frontend
+```bash
+cd frontend
+npm install
+```
 
-### `npm run build`
+#### Backend
+```bash
+cd backend
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Environment Variables
+Create a `.env` file in the **backend** folder and add your Hugging Face API key:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```env
+HUGGINGFACE_API_KEY=your_api_key_here
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Run Locally
 
-### `npm run eject`
+#### Start Backend
+```bash
+cd backend
+node server.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Start Frontend
+```bash
+cd frontend
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will be available at **http://localhost:3000** with the backend running at **http://localhost:5000**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌍 Deployment
 
-## Learn More
+### 🔗 Live Links
+- **Frontend (Vercel):** https://ai-code-review-frontend.vercel.app  
+- **Backend (Render):** https://ai-code-review-backend-csl7.onrender.com  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🚀 Deploy Backend on Render
+1. Push backend code to a GitHub repository.  
+2. Login to [Render](https://render.com) and create a new Web Service.  
+3. Connect it to your backend GitHub repo.  
+4. Set **Build Command:**
+   ```bash
+   npm install
+   ```
+5. Set **Start Command:**
+   ```bash
+   node server.js
+   ```
+6. Add environment variable in Render:
+   ```env
+   HUGGINGFACE_API_KEY=your_api_key_here
+   ```
+7. Deploy and get the Render backend URL.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🚀 Deploy Frontend on Vercel
+1. Push frontend code to a GitHub repository.  
+2. Login to [Vercel](https://vercel.com) and create a new project.  
+3. Import the frontend repo.  
+4. Add environment variable in Vercel if needed:
+   ```env
+   REACT_APP_BACKEND_URL=https://your-backend.onrender.com
+   ```
+5. Deploy and get the Vercel frontend URL.
 
-### Code Splitting
+### 🔧 Update API Endpoint
+In the frontend code, update the axios call to point to the deployed backend:
+```js
+const response = await axios.post("https://your-backend.onrender.com/analyze", { code });
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
